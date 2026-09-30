@@ -1,0 +1,76 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="Aarambha.Masterpages.AdminMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">Teacher</asp:ContentPlaceHolder> | Aarambha</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body class="admin-body">
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand navbar-dark admin-topbar">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-outline-light d-lg-none me-2" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#adminSidebar">
+                    Menu
+                </button>
+                <a class="navbar-brand fw-bold text-white" runat="server" href="~/Admin/Dashboard.aspx">
+                    AARAMBHA <span class="fw-normal small">Teacher</span>
+                </a>
+                <div class="ms-auto d-flex align-items-center gap-2">
+                    <span class="text-white-50 small d-none d-sm-inline">
+                        <asp:Literal ID="litTeacherName" runat="server" />
+                    </span>
+                    <asp:HyperLink runat="server" CssClass="btn btn-sm btn-light" NavigateUrl="~/Account/Profile.aspx">Profile</asp:HyperLink>
+                    <asp:HyperLink runat="server" CssClass="btn btn-sm btn-outline-light" NavigateUrl="~/Account/Logout.aspx">Logout</asp:HyperLink>
+                </div>
+            </div>
+        </nav>
+
+        <div class="admin-layout">
+            <aside class="admin-sidebar d-none d-lg-block">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/Dashboard.aspx">Dashboard</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ManageStudents.aspx">Manage Students</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ManageSubjects.aspx">Manage Subjects</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ManageNotes.aspx">Manage Notes</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ManageQuiz.aspx">Manage Quizzes</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ManageAnnouncements.aspx">Announcements</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ViewQuizResults.aspx">Quiz Results</asp:HyperLink></li>
+                    <li class="nav-item"><asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Admin/ViewMessages.aspx">Messages</asp:HyperLink></li>
+                </ul>
+            </aside>
+
+            <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="adminSidebar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">AARAMBHA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/Dashboard.aspx") %>">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ManageStudents.aspx") %>">Manage Students</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ManageSubjects.aspx") %>">Manage Subjects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ManageNotes.aspx") %>">Manage Notes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ManageQuiz.aspx") %>">Manage Quizzes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ManageAnnouncements.aspx") %>">Announcements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ViewQuizResults.aspx") %>">Quiz Results</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%= ResolveUrl("~/Admin/ViewMessages.aspx") %>">Messages</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <main class="admin-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </form>
+
+    <script src="<%= ResolveUrl("~/Scripts/jquery-3.7.0.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+    <script>document.querySelectorAll('.nav-link[href]').forEach(function(a){if(a.pathname.toLowerCase()===location.pathname.toLowerCase())a.classList.add('active')});</script>
+
+</body>
+</html>

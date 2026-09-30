@@ -1,0 +1,27 @@
+﻿<%@ Page Title="Contact Messages" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ViewMessages.aspx.cs" Inherits="Aarambha.Admin.ViewMessages" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Contact Messages</h3>
+
+    <asp:GridView ID="gvMessages" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="gvMessages_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="SenderName" HeaderText="Name" />
+            <asp:BoundField DataField="SenderEmail" HeaderText="Email" />
+            <asp:BoundField DataField="Subject" HeaderText="Subject" />
+            <asp:BoundField DataField="MessageText" HeaderText="Message" />
+            <asp:TemplateField HeaderText="Status">
+                <ItemTemplate>
+                    <%# (bool)Eval("IsRead") ? "Read" : "<strong>Unread</strong>" %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Action">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnToggle" runat="server" CommandName="Toggle" CommandArgument='<%# Eval("ContactMessageID") %>' CssClass="btn btn-sm btn-warning">
+                        <%# (bool)Eval("IsRead") ? "Mark Unread" : "Mark Read" %>
+                    </asp:LinkButton>
+                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("ContactMessageID") %>' CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Delete?');">Delete</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+</asp:Content>

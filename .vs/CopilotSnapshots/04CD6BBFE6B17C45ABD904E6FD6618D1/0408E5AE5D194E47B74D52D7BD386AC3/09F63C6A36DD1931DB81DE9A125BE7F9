@@ -1,0 +1,47 @@
+﻿<%@ Page Title="Manage Quizzes" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ManageQuiz.aspx.cs" Inherits="Aarambha.Admin.ManageQuiz" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Manage Quizzes</h3>
+    <asp:Literal ID="ltAlert" runat="server"></asp:Literal>
+
+    <div class="card p-3 mb-3">
+        <h5>Add Quiz</h5>
+        <div class="row">
+            <div class="col-md-4"><asp:TextBox ID="txtQuizTitle" runat="server" CssClass="form-control" placeholder="Quiz Title" /></div>
+            <div class="col-md-4">
+                <label>Subject:</label>
+                <asp:DropDownList ID="ddlSubject" runat="server" CssClass="form-control"></asp:DropDownList>
+            </div>
+            <div class="col-md-4"><asp:TextBox ID="txtDuration" runat="server" CssClass="form-control" TextMode="Number" placeholder="Duration (min)" /></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12"><asp:Button ID="btnAdd" runat="server" Text="Create Quiz" CssClass="btn btn-primary" OnClick="btnAdd_Click" /></div>
+        </div>
+    </div>
+
+    <h5>Quizzes</h5>
+    <asp:GridView ID="gvQuizzes" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="gvQuizzes_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="QuizTitle" HeaderText="Title" />
+            <asp:BoundField DataField="SubjectID" HeaderText="SubjectID" />
+            <asp:BoundField DataField="DurationMinutes" HeaderText="Duration (min)" />
+            <asp:TemplateField HeaderText="Action">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnQuestions" runat="server" CommandName="Manage" CommandArgument='<%# Eval("QuizID") %>' CssClass="btn btn-sm btn-info">Manage Questions</asp:LinkButton>
+                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("QuizID") %>' CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Delete?');">Delete</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+
+    <div id="questionPanel" runat="server" visible="false" class="card p-3 mt-3">
+        <h5>Manage Questions for Quiz: <asp:Literal ID="ltEditQuiz" runat="server"></asp:Literal></h5>
+        <div class="row">
+            <div class="col-md-10"><asp:TextBox ID="txtQuestion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" placeholder="Question text..." /></div>
+            <div class="col-md-2" style="padding-top: 30px;"><asp:Button ID="btnAddQuestion" runat="server" Text="Add Q" CssClass="btn btn-primary" OnClick="btnAddQuestion_Click" /></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12"><asp:Button ID="btnBackQuizzes" runat="server" Text="Back to Quizzes" CssClass="btn btn-secondary" OnClick="btnBackQuizzes_Click" /></div>
+        </div>
+    </div>
+</asp:Content>

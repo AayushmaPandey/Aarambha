@@ -1,0 +1,52 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Site.Master" AutoEventWireup="true" CodeBehind="Subjects.aspx.cs" Inherits="Aarambha.Pages.Subjects" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">Subjects</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Grade 8 Subjects</h1>
+            <p class="mb-0">Browse the subjects available on Aarambha. Log in to read notes and take quizzes.</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <asp:Panel ID="pnlError" runat="server" CssClass="alert alert-warning" Visible="false">
+            <asp:Literal ID="litError" runat="server" />
+        </asp:Panel>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search subjects..." />
+                    <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-primary" Text="Search" OnClick="btnSearch_Click" />
+                </div>
+            </div>
+        </div>
+
+        <asp:Repeater ID="rptSubjects" runat="server">
+            <HeaderTemplate><div class="row g-4"></HeaderTemplate>
+            <ItemTemplate>
+                <div class="col-md-4 col-sm-6">
+                    <div class="subject-card">
+                        <img src='<%# ResolveUrl(Aarambha.Helpers.UiHelper.SubjectImage(Eval("SubjectName"))) %>' alt="" />
+                        <h5><%# Eval("SubjectName") %></h5>
+                        <p class="text-muted small"><%# Eval("Description") %></p>
+                        <asp:HyperLink runat="server" CssClass="btn btn-sm btn-outline-primary"
+                            NavigateUrl='<%# Session["UserID"] != null ? "~/Member/Notes.aspx?subjectId=" + Eval("SubjectID") : "~/Account/Login.aspx" %>'>
+                            View Notes
+                        </asp:HyperLink>
+                    </div>
+                </div>
+            </ItemTemplate>
+            <FooterTemplate></div></FooterTemplate>
+        </asp:Repeater>
+
+        <asp:PlaceHolder ID="phEmpty" runat="server" Visible="false">
+            <div class="empty-state">
+                <div class="empty-icon">📭</div>
+                <p class="mb-0">No subjects found.</p>
+            </div>
+        </asp:PlaceHolder>
+    </div>
+
+</asp:Content>

@@ -1,0 +1,38 @@
+﻿<%@ Page Title="Student Dashboard" Language="C#" MasterPageFile="~/Masterpages/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Aarambha.Member.Dashboard" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2>Welcome, <asp:Literal ID="ltName" runat="server"></asp:Literal></h2>
+            <p>Quick overview of your learning materials.</p>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary p-3 shadow-sm">
+                <h6 class="card-title">Subjects Available</h6>
+                <h2><asp:Literal ID="ltSubjects" runat="server">0</asp:Literal></h2>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success p-3 shadow-sm">
+                <h6 class="card-title">Notes to Read</h6>
+                <h2><asp:Literal ID="ltNotes" runat="server">0</asp:Literal></h2>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning p-3 shadow-sm">
+                <h6 class="card-title">Quizzes Attempted</h6>
+                <h2><asp:Literal ID="ltQuizzesAttempted" runat="server">0</asp:Literal></h2>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-dark p-3 shadow-sm">
+                <h6 class="card-title">Latest Announcement</h6>
+                <h5 class="mb-1"><asp:Literal ID="ltLatestTitle" runat="server"></asp:Literal></h5>
+                <div class="small text-muted"><asp:Literal ID="ltLatestDate" runat="server"></asp:Literal></div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

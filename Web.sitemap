@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Pages/Default.aspx" title="Home" description="Aarambha Home">
+	<siteMapNode url="~/Pages/About.aspx" title="About" />
+	<siteMapNode url="~/Pages/Subjects.aspx" title="Subjects" />
+	<siteMapNode url="~/Pages/Contact.aspx" title="Contact" />
+	<siteMapNode url="~/Member/Dashboard.aspx" title="Student Dashboard" />
+	<siteMapNode url="~/Member/Notes.aspx" title="Notes" />
+	<siteMapNode url="~/Member/QuizResults.aspx" title="Quiz Results" />
+	<siteMapNode url="~/Member/Announcements.aspx" title="Announcements" />
+	<siteMapNode url="~/Admin/Dashboard.aspx" title="Teacher Dashboard" />
+	<siteMapNode url="~/Admin/ManageStudents.aspx" title="Manage Students" />
+	<siteMapNode url="~/Admin/ManageSubjects.aspx" title="Manage Subjects" />
+	<siteMapNode url="~/Admin/ManageNotes.aspx" title="Manage Notes" />
+	<siteMapNode url="~/Admin/ManageQuiz.aspx" title="Manage Quizzes" />
+	<siteMapNode url="~/Admin/ManageAnnouncements.aspx" title="Manage Announcements" />
+	<siteMapNode url="~/Admin/ViewQuizResults.aspx" title="View Quiz Results" />
+	<siteMapNode url="~/Admin/ViewMessages.aspx" title="View Messages" />
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,31 @@
+﻿<%@ Page Title="Manage Announcements" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ManageAnnouncements.aspx.cs" Inherits="Aarambha.Admin.ManageAnnouncements" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Manage Announcements</h3>
+    <asp:Literal ID="ltAlert" runat="server"></asp:Literal>
+
+    <div class="card p-3 mb-3">
+        <h5>Create Announcement</h5>
+        <div class="row">
+            <div class="col-md-12"><asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" placeholder="Announcement Title" /></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12"><asp:TextBox ID="txtContent" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" placeholder="Announcement Content..." /></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12"><asp:Button ID="btnAdd" runat="server" Text="Post" CssClass="btn btn-primary" OnClick="btnAdd_Click" /></div>
+        </div>
+    </div>
+
+    <asp:GridView ID="gvAnnouncements" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="gvAnnouncements_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="Title" HeaderText="Title" />
+            <asp:BoundField DataField="CreatedAt" HeaderText="Posted" DataFormatString="{0:g}" />
+            <asp:TemplateField HeaderText="Action">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("AnnouncementID") %>' CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Delete?');">Delete</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+</asp:Content>

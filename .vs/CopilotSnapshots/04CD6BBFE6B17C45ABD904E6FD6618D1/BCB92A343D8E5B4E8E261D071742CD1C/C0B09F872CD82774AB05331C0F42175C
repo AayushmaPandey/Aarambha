@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using Aarambha.Data_Access_Layer;
+using Aarambha.Models;
+
+namespace Aarambha.BLL
+{
+    public class UserBLL
+    {
+        private readonly UserDAL _dal = new UserDAL();
+
+        public List<User> GetAll() => _dal.GetAll();
+
+        public List<User> GetStudents() => _dal.GetStudents();
+
+        public User GetById(int id)
+        {
+            if (id <= 0) throw new ValidationException("Invalid user ID.");
+            return _dal.GetById(id);
+        }
+
+        public User GetByUsername(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username)) throw new ValidationException("Username is required.");
+            return _dal.GetByUsername(username);
+        }
+
+        public int Create(User model)
+        {
+            if (model == null) throw new ValidationException("User is required.");
+            if (string.IsNullOrWhiteSpace(model.Username)) throw new ValidationException("Username is required.");
+            if (string.IsNullOrWhiteSpace(model.FullName)) throw new ValidationException("Full name is required.");
+            if (model.Username.Length > 50) throw new ValidationException("Username max length is 50.");
+            if (model.FullName.Length > 100) throw new ValidationException("Full name max length is 100.");
+            if (!string.IsNullOrWhiteSpace(model.Email) && model.Email.Length > 150) throw new ValidationException("Email max length is 150.");
+
+            var existing = _dal.GetByUsername(model.Username);
+            if (existing != null) throw new ValidationException("Username already exists.");
+
+            model.CreatedAt = DateTime.UtcNow;
+            return _dal.Insert(model);
+        }
+
+        public void Update(User model)
+        {
+            if (model == null) throw new ValidationException("User is required.");
+            if (model.UserID <= 0) throw new ValidationException("Invalid user ID.");
+            if (!string.IsNullOrWhiteSpace(model.Email) && model.Email.Length > 150) throw new ValidationException("Email max length is 150.");
+            if (!string.IsNullOrWhiteSpace(model.PhoneNumber) && model.PhoneNumber.Length > 20) throw new ValidationException("Phone number max length is 20.");
+
+            _dal.Update(model);
+        }
+
+        public void EnableStudent(int userId)
+        {
+            if (userId <= 0) throw new ValidationException("Invalid user ID.");
+            _dal.EnableStudent(userId);
+        }
+
+        public void DisableStudent(int userId)
+        {
+            if (userId <= 0) throw new ValidationException("Invalid user ID.");
+            _dal.DisableStudent(userId);
+        }
+
+        public void ChangePassword(int userId, string newHash, string newSalt)
+        {
+            if (userId <= 0) throw new ValidationException("Invalid user ID.");
+            if (string.IsNullOrWhiteSpace(newHash) || string.IsNullOrWhiteSpace(newSalt)) throw new ValidationException("Invalid password parameters.");
+            var user = _dal.GetById(userId);
+            if (user == null) throw new ValidationException("User not found.");
+            user.PasswordHash = newHash;
+            user.PasswordSalt = newSalt;
+            _dal.Update(user);
+        }
+    }
+}

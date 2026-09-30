@@ -1,0 +1,55 @@
+/* AARAMBHA - design tokens & styles */
+:root{--brand:#1f3b6f;--brand-dark:#14284d;--brand-light:#eef2ff;--accent:#f59e0b;--ink:#1e2530;--muted:#6b7280;--bg:#f5f7fb;--card-radius:16px}
+body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{display:block;min-height:60vh}a{text-decoration:none}
+.text-gradient{background:linear-gradient(90deg,var(--brand),#3b82f6);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* navbar */
+.site-nav{padding:.6rem 0;border-bottom:1px solid #e8ecf5}
+.site-nav .navbar-brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.3rem;letter-spacing:.03em;color:var(--brand)!important}
+.brand-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3b82f6);color:#fff;font-weight:800}
+.site-nav .nav-link{font-weight:500;color:var(--ink);padding:.5rem .9rem!important;border-radius:10px;transition:.15s}
+.site-nav .nav-link:hover,.site-nav .nav-link.active{color:var(--brand);background:var(--brand-light)}
+/* buttons */
+.btn{border-radius:10px}
+.btn-primary{background:var(--brand);border-color:var(--brand);font-weight:600}
+.btn-primary:hover,.btn-primary:focus{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-outline-primary{color:var(--brand);border-color:var(--brand);font-weight:600}
+.btn-outline-primary:hover{background:var(--brand);border-color:var(--brand)}
+/* hero */
+.hero-section{background:radial-gradient(800px 380px at 85% 0,#dfe8ff,transparent 60%),linear-gradient(180deg,#fff,var(--bg));padding:4rem 0 3rem}
+.hero-badge{display:inline-block;background:#fff4dc;color:#9a6200;font-weight:600;font-size:.82rem;padding:.35rem .85rem;border-radius:99px;margin-bottom:1rem}
+.hero-img{max-width:100%;height:auto;filter:drop-shadow(0 22px 30px rgba(31,59,111,.18))}
+.page-header{background:linear-gradient(135deg,var(--brand),#2e5aa8);color:#fff;padding:3rem 0 2.5rem;margin-bottom:2.5rem}
+.page-header h1{font-weight:800}.page-header p{color:rgba(255,255,255,.85)}
+/* cards */
+.feature-card,.subject-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:var(--card-radius);padding:1.75rem 1.5rem;height:100%;box-shadow:0 2px 12px rgba(20,30,60,.05);transition:transform .18s,box-shadow .18s}
+.feature-card:hover,.subject-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(20,30,60,.12)}
+.subject-card{text-align:center}.subject-card h5{font-weight:700}
+.subject-card img{width:84px;height:84px;margin-bottom:1rem}
+.feature-icon{font-size:1.9rem;width:58px;height:58px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border-radius:16px;background:var(--brand-light)}
+.card{border:0;border-radius:var(--card-radius);box-shadow:0 2px 12px rgba(20,30,60,.06)}
+.table thead th{background:#f0f3fa;color:var(--brand);font-weight:600;border-bottom:0}
+.form-control,.form-select{border-radius:10px;border-color:#dfe4ef}
+.form-control:focus,.form-select:focus{border-color:#6f8fd6;box-shadow:0 0 0 .2rem rgba(31,59,111,.12)}
+.empty-state{text-align:center;padding:3.5rem 1rem;color:var(--muted)}.empty-icon{font-size:2.75rem}
+/* auth */
+.auth-page{padding:3rem 0;display:flex;justify-content:center}
+.auth-shell{display:flex;width:min(960px,94%);background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(20,30,60,.14)}
+.auth-side{flex:1;background:linear-gradient(160deg,var(--brand),#2e5aa8);color:#fff;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.auth-side img{max-width:100%;margin-bottom:1.25rem}.auth-side p{color:rgba(255,255,255,.8);margin:0}
+.auth-card{flex:1.1;padding:2.5rem 2.25rem}
+.auth-card .form-label{font-weight:600;font-size:.9rem}
+.auth-card .form-control{padding:.65rem .9rem}.auth-card .btn-primary{padding:.7rem}
+@media(max-width:768px){.auth-side{display:none}.auth-card{padding:1.75rem 1.25rem}}
+/* footer */
+.site-footer{background:#14233f;color:rgba(255,255,255,.72);margin-top:4rem}
+.site-footer h6{color:#fff;font-weight:700}.site-footer a{color:rgba(255,255,255,.72)}.site-footer a:hover{color:#fff}
+/* teacher / admin area */
+.admin-topbar{background:linear-gradient(90deg,var(--brand-dark),var(--brand))}
+.admin-body{background:#f3f5fa}
+.admin-layout{display:flex;min-height:calc(100vh - 56px)}
+.admin-sidebar{width:245px;flex:none;background:#fff;border-right:1px solid #e6e9f2;padding:1rem .75rem}
+.admin-sidebar .nav-link,.offcanvas .nav-link{color:var(--ink);font-weight:500;border-radius:10px;padding:.6rem .9rem;margin-bottom:2px}
+.admin-sidebar .nav-link:hover,.offcanvas .nav-link:hover{background:var(--brand-light);color:var(--brand)}
+.admin-sidebar .nav-link.active,.offcanvas .nav-link.active{background:var(--brand);color:#fff}
+.admin-content{flex:1;min-width:0;padding:1.75rem}

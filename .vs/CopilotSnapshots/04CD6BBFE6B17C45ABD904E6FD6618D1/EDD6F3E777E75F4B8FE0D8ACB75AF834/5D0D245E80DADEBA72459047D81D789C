@@ -1,0 +1,171 @@
+﻿using System;
+using System.IO;
+using Aarambha.BLL;
+using Aarambha.Models;
+
+namespace Aarambha.Admin
+{
+    public partial class ManageNotes : System.Web.UI.Page
+    {
+        private readonly NoteBLL _noteBll = new NoteBLL();
+        private readonly SubjectBLL _subjectBll = new SubjectBLL();
+        private readonly ResourceBLL _resourceBll = new ResourceBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CheckRole();
+                LoadSubjects();
+                LoadNotes();
+            }
+            // Ensure file uploads work by setting form enctype
+            try { if (this.Form != null) this.Form.Enctype = "multipart/form-data"; } catch { }
+        }
+
+        private void CheckRole()
+        {
+            if (Session["UserID"] == null || Session["RoleID"] == null || (int)Session["RoleID"] != 1)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
+        }
+
+        private void LoadSubjects()
+        {
+            var subjects = _subjectBll.GetAll();
+            ddlSubject.DataSource = subjects;
+            ddlSubject.DataTextField = "SubjectName";
+            ddlSubject.DataValueField = "SubjectID";
+            ddlSubject.DataBind();
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var note = new Note
+                {
+                    Title = txtTitle.Text.Trim(),
+                    ContentHtml = txtContent.Text.Trim(),
+                    SubjectID = int.Parse(ddlSubject.SelectedValue),
+                    SortOrder = 0
+                };
+                var createdId = _noteBll.Create(note);
+                note.NoteID = createdId;
+
+                if (fuPDF.HasFile)
+                {
+                    var uploadsDir = Server.MapPath("~/Content/uploads/notes");
+                    if (!Directory.Exists(uploadsDir))
+                        Directory.CreateDirectory(uploadsDir);
+
+                    var fileName = Path.GetFileNameWithoutExtension(fuPDF.FileName) + "_" + DateTime.UtcNow.Ticks + ".pdf";
+                    var filePath = Path.Combine(uploadsDir, fileName);
+                    fuPDF.SaveAs(filePath);
+
+                    var resource = new Resource
+                    {
+                        Title = Path.GetFileNameWithoutExtension(fuPDF.FileName),
+                        FilePath = "~/Content/uploads/notes/" + fileName,
+                        NoteID = note.NoteID,
+                        UploadedAt = DateTime.UtcNow
+                    };
+                    _resourceBll.Create(resource);
+                }
+
+                ltAlert.Text = "<div class=\"alert alert-success\">Note added.</div>";
+                LoadNotes();
+                txtTitle.Text = txtContent.Text = string.Empty;
+            }
+            catch (ValidationException ex)
+            {
+                ltAlert.Text = $"<div class=\"alert alert-danger\">{Server.HtmlEncode(ex.Message)}</div>";
+            }
+            catch (Exception ex)
+            {
+                ltAlert.Text = $"<div class=\"alert alert-danger\">Error: {Server.HtmlEncode(ex.Message)}</div>";
+            }
+        }
+
+        protected void gvNotes_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete" || e.CommandName == "DeleteNote")
+            {
+                int noteId;
+                if (int.TryParse(e.CommandArgument.ToString(), out noteId))
+                {
+                    try
+                    {
+                        _noteBll.Delete(noteId);
+                        LoadNotes();
+                    }
+                    catch { }
+                }
+            }
+            else if (e.CommandName == "Preview")
+            {
+                int noteId;
+                if (int.TryParse(e.CommandArgument.ToString(), out noteId))
+                {
+                    try
+                    {
+                        var note = _noteBll.GetById(noteId);
+                        if (note != null)
+                        {
+                            ltModalTitle.Text = Server.HtmlEncode(note.Title ?? "");
+                            // render HTML content as-is for preview
+                            ltModalBody.Text = note.ContentHtml ?? string.Empty;
+
+                            var resources = _resourceBll.GetByNoteId(noteId);
+                            if (resources != null && resources.Count > 0)
+                            {
+                                var sb = new System.Text.StringBuilder();
+                                sb.Append("<div>Resources:<ul>");
+                                foreach (var r in resources)
+                                {
+                                    var url = ResolveUrl("~/Content/uploads/notes/" + System.IO.Path.GetFileName(r.FilePath));
+                                    sb.Append($"<li><a href=\"{url}\" target=\"_blank\">{Server.HtmlEncode(r.Title)}</a></li>");
+                                }
+                                sb.Append("</ul></div>");
+                                ltModalResources.Text = sb.ToString();
+                            }
+                            else
+                            {
+                                ltModalResources.Text = string.Empty;
+                            }
+
+                            // show bootstrap modal
+                            var script = "var m = new bootstrap.Modal(document.getElementById('notePreviewModal')); m.show();";
+                            try
+                            {
+                                var sm = System.Web.UI.ScriptManager.GetCurrent(this.Page);
+                                if (sm != null)
+                                {
+                                    System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "showNotePreview", script, true);
+                                }
+                                else
+                                {
+                                    ClientScript.RegisterStartupScript(GetType(), "showNotePreview", script, true);
+                                }
+                            }
+                            catch
+                            {
+                                // fallback
+                                ClientScript.RegisterStartupScript(GetType(), "showNotePreview", script, true);
+                            }
+                        }
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        private void LoadNotes()
+        {
+            var notes = _noteBll.GetAll();
+            gvNotes.DataSource = notes;
+            gvNotes.DataBind();
+        }
+    }
+}

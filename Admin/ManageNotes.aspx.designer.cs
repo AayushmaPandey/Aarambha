@@ -1,0 +1,16 @@
+namespace Aarambha.Admin
+{
+    public partial class ManageNotes
+    {
+        protected global::System.Web.UI.WebControls.Literal ltAlert;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubject;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
+        protected global::System.Web.UI.WebControls.FileUpload fuPDF;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.GridView gvNotes;
+        protected global::System.Web.UI.WebControls.Literal ltModalTitle;
+        protected global::System.Web.UI.WebControls.Literal ltModalBody;
+        protected global::System.Web.UI.WebControls.Literal ltModalResources;
+    }
+}

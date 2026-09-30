@@ -1,0 +1,47 @@
+﻿<%@ Page Title="Manage Notes" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ManageNotes.aspx.cs" Inherits="Aarambha.Admin.ManageNotes" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Manage Notes</h3>
+    <asp:Literal ID="ltAlert" runat="server"></asp:Literal>
+
+    <div class="card p-3 mb-3">
+        <h5>Add Note</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Subject:</label>
+                <asp:DropDownList ID="ddlSubject" runat="server" CssClass="form-control"></asp:DropDownList>
+            </div>
+            <div class="col-md-6">
+                <label>Title:</label>
+                <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" placeholder="Note Title" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <label>Content (HTML):</label>
+                <asp:TextBox ID="txtContent" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" placeholder="Enter note content..." />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label>PDF Upload (optional):</label>
+                <asp:FileUpload ID="fuPDF" runat="server" accept=".pdf" CssClass="form-control" />
+            </div>
+            <div class="col-md-6" style="padding-top: 30px;">
+                <asp:Button ID="btnAdd" runat="server" Text="Create Note" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
+            </div>
+        </div>
+    </div>
+
+    <asp:GridView ID="gvNotes" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="gvNotes_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="Title" HeaderText="Title" />
+            <asp:BoundField DataField="SubjectID" HeaderText="SubjectID" />
+            <asp:TemplateField HeaderText="Action">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("NoteID") %>' CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Delete?');">Delete</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+</asp:Content>

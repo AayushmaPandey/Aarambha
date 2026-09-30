@@ -1,0 +1,10 @@
+﻿<%@ Page Title="Student Dashboard" Language="C#" MasterPageFile="~/Masterpages/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Aarambha.Member.Dashboard" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Welcome, <asp:Literal ID="ltName" runat="server"></asp:Literal></h2>
+            <p>Quick overview of your learning materials.</p>
+        </div>
+    </div>
+</asp:Content>

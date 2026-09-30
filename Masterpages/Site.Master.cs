@@ -1,0 +1,35 @@
+using System;
+
+namespace Aarambha.Masterpages
+{
+    public partial class SiteMaster : System.Web.UI.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["UserID"] != null)
+            {
+                phGuestLinks.Visible = false;
+                phMemberLinks.Visible = true;
+                // hide public navigation when logged in (students/teachers should see member/admin nav)
+                var pub = FindControl("phPublicNav") as System.Web.UI.WebControls.PlaceHolder;
+                if (pub != null) pub.Visible = false;
+
+                litUserName.Text = Server.HtmlEncode(
+                    Session["FullName"] as string ?? "My Account");
+
+                // RoleID: 1 = Teacher, 2 = Student (matches seed data order)
+                string roleId = Session["RoleID"]?.ToString();
+                hlDashboard.NavigateUrl = roleId == "1"
+                    ? ResolveUrl("~/Admin/Dashboard.aspx")
+                    : ResolveUrl("~/Member/Dashboard.aspx");
+            }
+            else
+            {
+                phGuestLinks.Visible = true;
+                phMemberLinks.Visible = false;
+                var pub = FindControl("phPublicNav") as System.Web.UI.WebControls.PlaceHolder;
+                if (pub != null) pub.Visible = true;
+            }
+        }
+    }
+}

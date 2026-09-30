@@ -1,0 +1,255 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Aarambha.BLL;
+using Aarambha.Models;
+using System.Web.UI.WebControls;
+
+namespace Aarambha.Member
+{
+    public partial class Quiz : System.Web.UI.Page
+    {
+        private readonly QuizBLL _quizBll = new QuizBLL();
+        private readonly QuestionBLL _qBll = new QuestionBLL();
+        private readonly QuestionOptionBLL _optBll = new QuestionOptionBLL();
+        private readonly QuizAttemptBLL _attemptBll = new QuizAttemptBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // require authenticated student
+            if (Session["UserID"] == null || Session["RoleID"] == null || (int)Session["RoleID"] != 2)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+                return;
+            }
+
+            // If the quiz form was submitted, evaluate and save the attempt using posted form values.
+            if (Request.HttpMethod == "POST" && Request.Form["submitQuiz"] != null)
+            {
+                int qid = 0;
+                if (Request.QueryString["quizId"] != null)
+                {
+                    int.TryParse(Request.QueryString["quizId"], out qid);
+                }
+                else
+                {
+                    int.TryParse(ddlQuizzes.SelectedValue, out qid);
+                }
+
+                if (qid > 0)
+                {
+                    var quiz = _quizBll.GetById(qid);
+                    var questions = _qBll.GetByQuizId(qid);
+                    EvaluateAndSave(quiz, questions);
+                    // EvaluateAndSave will redirect on success
+                }
+
+                return;
+            }
+
+            if (!IsPostBack)
+            {
+                LoadQuizzes();
+                if (Request.QueryString["quizId"] != null)
+                {
+                    int qid;
+                    if (int.TryParse(Request.QueryString["quizId"], out qid))
+                    {
+                        ddlQuizzes.SelectedValue = qid.ToString();
+                        RenderQuiz(qid);
+                    }
+                }
+            }
+        }
+
+        private void LoadQuizzes()
+        {
+            ddlQuizzes.Items.Clear();
+            ddlQuizzes.Items.Add(new ListItem("-- Select Quiz --","0"));
+            foreach (var q in _quizBll.GetAll())
+            {
+                if (!q.IsActive) continue;
+                ddlQuizzes.Items.Add(new ListItem(q.Title, q.QuizID.ToString()));
+            }
+        }
+
+        protected void ddlQuizzes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id;
+            if (int.TryParse(ddlQuizzes.SelectedValue, out id) && id>0)
+            {
+                Response.Redirect("~/Member/Quiz.aspx?quizId="+id);
+            }
+            else
+            {
+                ltQuizArea.Text = string.Empty;
+            }
+        }
+
+        private void RenderQuiz(int quizId)
+        {
+            var quiz = _quizBll.GetById(quizId);
+            if (quiz==null) { ltQuizArea.Text = "<div class=\"alert alert-warning\">Quiz not found.</div>"; return; }
+            var questions = _qBll.GetByQuizId(quizId);
+            var sb = new StringBuilder();
+            // Quiz info card
+            sb.Append("<div class=\"card mb-3 shadow-sm\">\n");
+            sb.Append("  <div class=\"card-body\">\n");
+            sb.Append($"    <h4 class=\"card-title\">{Server.HtmlEncode(quiz.Title)}</h4>\n");
+            int questionCount = questions != null ? questions.Count : 0;
+            sb.Append($"    <div class=\"small text-muted mb-2\">Questions: {questionCount} &nbsp;|&nbsp; Pass mark: {quiz.PassMark}%</div>\n");
+            sb.Append("  </div>\n");
+            sb.Append("</div>\n");
+
+            sb.Append("<asp:Literal ID=\"ltMsg\" runat=\"server\"></asp:Literal>");
+            sb.Append("<form method=\"post\">\n");
+            int idx = 0;
+            foreach (var q in questions)
+            {
+                idx++;
+                // Question card
+                sb.Append($"<div class=\"card mb-3\">\n  <div class=\"card-body\">\n    <h5 class=\"card-title\">Q{idx}. {Server.HtmlEncode(q.QuestionText)}</h5>\n");
+                var options = _optBll.GetByQuestionId(q.QuestionID);
+                if (q.QuestionType=="SingleChoice" || q.QuestionType=="TrueFalse")
+                {
+                    // single choice: render radio inputs named q_{QuestionID}
+                    sb.Append("    <div class=\"mt-2\">\n");
+                    foreach (var o in options)
+                    {
+                        sb.Append("      <div class=\"form-check mb-2\">\n");
+                        sb.Append($"        <input class=\"form-check-input\" type=\"radio\" name=\"q_{q.QuestionID}\" value=\"{o.OptionID}\" id=\"opt_{o.OptionID}\">\n");
+                        sb.Append($"        <label class=\"form-check-label\" for=\"opt_{o.OptionID}\">{Server.HtmlEncode(o.OptionText)}</label>\n");
+                        sb.Append("      </div>\n");
+                    }
+                    sb.Append("    </div>\n");
+                }
+                else // MultipleChoice
+                {
+                    sb.Append("    <div class=\"mt-2\">\n");
+                    foreach (var o in options)
+                    {
+                        sb.Append("      <div class=\"form-check mb-2\">\n");
+                        sb.Append($"        <input class=\"form-check-input\" type=\"checkbox\" name=\"q_{q.QuestionID}_opt\" value=\"{o.OptionID}\" id=\"opt_{o.OptionID}\">\n");
+                        sb.Append($"        <label class=\"form-check-label\" for=\"opt_{o.OptionID}\">{Server.HtmlEncode(o.OptionText)}</label>\n");
+                        sb.Append("      </div>\n");
+                    }
+                    sb.Append("    </div>\n");
+                }
+                sb.Append("  </div>\n</div>\n");
+            }
+            sb.Append("<div class=\"d-flex justify-content-end\"><button type=\"submit\" name=\"submitQuiz\" class=\"btn btn-primary\">Submit Quiz</button></div>");
+            sb.Append("</form>");
+            ltQuizArea.Text = sb.ToString();
+
+            // handle submission when form posts back
+            if (Request.HttpMethod=="POST" && Request.Form["submitQuiz"]!=null)
+            {
+                EvaluateAndSave(quiz, questions);
+            }
+        }
+
+        private void EvaluateAndSave(Models.Quiz quizModel, List<Question> questions)
+        {
+            // Use question count as TotalMarks (one mark per question) to keep Score/Total simple and consistent.
+            // This ensures Score is the number of correctly answered questions and TotalMarks is the number of questions.
+            int totalMarks = questions != null ? questions.Count : 0;
+            int score = 0;
+            foreach (var q in questions)
+            {
+                var options = _optBll.GetByQuestionId(q.QuestionID);
+                if (q.QuestionType=="SingleChoice" || q.QuestionType=="TrueFalse")
+                {
+                    // Robustly locate the submitted value for this question.
+                    string formKey = "q_" + q.QuestionID;
+                    string val = Request.Form[formKey];
+
+                    if (string.IsNullOrWhiteSpace(val) && Request.Form.AllKeys != null)
+                    {
+                        // Some posting scenarios may alter the key; try to find any key that starts with the expected prefix.
+                        foreach (var k in Request.Form.AllKeys)
+                        {
+                            if (k != null && k.StartsWith(formKey, StringComparison.OrdinalIgnoreCase))
+                            {
+                                val = Request.Form[k];
+                                if (!string.IsNullOrWhiteSpace(val)) break;
+                            }
+                        }
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(val))
+                    {
+                        int selected;
+                        if (int.TryParse(val.Trim(), out selected))
+                        {
+                            var opt = options.Find(x=>x.OptionID==selected);
+                            if (opt!=null && opt.IsCorrect)
+                            {
+                                // award 1 point per correctly answered question
+                                score += 1;
+                            }
+                        }
+                    }
+                }
+                else // multiple
+                {
+                    var selected = Request.Form.GetValues("q_"+q.QuestionID+"_opt");
+                    if (selected != null && selected.Length>0)
+                    {
+                        bool anyWrong = false;
+                        int correctCount = 0;
+                        int selectedCorrect = 0;
+                        foreach (var o in options)
+                        {
+                            if (o.IsCorrect) correctCount++;
+                        }
+                        foreach (var s in selected)
+                        {
+                            int id;
+                            if (int.TryParse(s, out id))
+                            {
+                                var opt = options.Find(x=>x.OptionID==id);
+                                if (opt!=null)
+                                {
+                                    if (!opt.IsCorrect) anyWrong = true;
+                                    else selectedCorrect++;
+                                }
+                            }
+                        }
+                        if (!anyWrong && selectedCorrect>0 && selectedCorrect==correctCount)
+                        {
+                            // award 1 point when the selection exactly matches the set of correct options
+                            score += 1;
+                        }
+                    }
+                }
+            }
+
+            // Validate totalMarks and compute pass/fail using the quiz's configured PassMark (fallback to 50% if not set)
+            if (totalMarks <= 0)
+            {
+                // No questions in quiz; do not create an attempt — treat as invalid submission
+                // Could also redirect with an error message; here we simply redirect back.
+                Response.Redirect("~/Member/Quiz.aspx?quizId=" + quizModel.QuizID);
+                return;
+            }
+
+            int effectivePassMark = quizModel.PassMark > 0 ? quizModel.PassMark : 50;
+            // IsPassed is derived only from the actual score and totalMarks (no separate flags)
+            bool passed = (score * 100) >= (effectivePassMark * totalMarks);
+
+            var attempt = new QuizAttempt
+            {
+                UserID = Convert.ToInt32(Session["UserID"]),
+                QuizID = quizModel.QuizID,
+                Score = score,
+                TotalMarks = totalMarks,
+                IsPassed = passed,
+                AttemptedAt = DateTime.UtcNow
+            };
+
+            // Persist the computed attempt (Score, TotalMarks, IsPassed are stored together)
+            _attemptBll.Create(attempt);
+            Response.Redirect("~/Member/QuizResults.aspx");
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿<%@ Page Title="Manage Subjects" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ManageSubjects.aspx.cs" Inherits="Aarambha.Admin.ManageSubjects" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Manage Subjects</h3>
+    <asp:Literal ID="ltAlert" runat="server"></asp:Literal>
+
+    <div class="card p-3 mb-3">
+        <h5>Add Subject</h5>
+        <div class="row">
+            <div class="col-md-6"><asp:TextBox ID="txtSubjectName" runat="server" CssClass="form-control" placeholder="Subject Name" /></div>
+            <div class="col-md-6"><asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" placeholder="Description" /></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12"><asp:Button ID="btnAdd" runat="server" Text="Add Subject" CssClass="btn btn-primary" OnClick="btnAdd_Click" /></div>
+        </div>
+    </div>
+
+    <asp:GridView ID="gvSubjects" runat="server" CssClass="table table-striped" AutoGenerateColumns="false" OnRowCommand="gvSubjects_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="SubjectName" HeaderText="Name" />
+            <asp:BoundField DataField="Description" HeaderText="Description" />
+            <asp:TemplateField HeaderText="Status">
+                <ItemTemplate>
+                    <%# (bool)Eval("IsActive") ? "Active" : "Inactive" %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Action">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnToggle" runat="server" CommandName="Toggle" CommandArgument='<%# Eval("SubjectID") %>' CssClass="btn btn-sm btn-warning">Toggle</asp:LinkButton>
+                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete" CommandArgument='<%# Eval("SubjectID") %>' CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Delete?');">Delete</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+</asp:Content>

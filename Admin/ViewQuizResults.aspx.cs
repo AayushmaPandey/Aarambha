@@ -1,0 +1,61 @@
+using System;
+using Aarambha.BLL;
+
+namespace Aarambha.Admin
+{
+    public partial class ViewQuizResults : System.Web.UI.Page
+    {
+        private readonly QuizAttemptBLL _quizAttemptBll = new QuizAttemptBLL();
+        private readonly QuizBLL _quizBll = new QuizBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CheckRole();
+                LoadQuizzes();
+                LoadResults();
+            }
+        }
+
+        private void CheckRole()
+        {
+            if (Session["UserID"] == null || Session["RoleID"] == null || (int)Session["RoleID"] != 1)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
+        }
+
+        private void LoadQuizzes()
+        {
+            var quizzes = _quizBll.GetAll();
+            ddlQuiz.DataSource = quizzes;
+            // Quiz model uses 'Title' property
+            ddlQuiz.DataTextField = "Title";
+            ddlQuiz.DataValueField = "QuizID";
+            ddlQuiz.DataBind();
+        }
+
+        protected void ddlQuiz_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadResults();
+        }
+
+        private void LoadResults()
+        {
+            try
+            {
+                // Use the joined results with user and quiz information
+                var dt = _quizAttemptBll.GetAllResultsWithUserAndQuiz();
+                int qid;
+                if (int.TryParse(ddlQuiz.SelectedValue, out qid) && qid > 0)
+                {
+                    dt.DefaultView.RowFilter = "QuizID = " + qid;
+                }
+                gvResults.DataSource = dt;
+                gvResults.DataBind();
+            }
+            catch { }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+using System;
+using System.Text;
+using System.Text.RegularExpressions;
+using Aarambha.BLL;
+
+namespace Aarambha.Member
+{
+    public partial class Notes : System.Web.UI.Page
+    {
+        private readonly SubjectBLL _subjectBll = new SubjectBLL();
+        private readonly NoteBLL _noteBll = new NoteBLL();
+        private readonly ResourceBLL _resourceBll = new ResourceBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (Session["UserID"] == null || Session["RoleID"] == null || (int)Session["RoleID"] != 2)
+                {
+                    Response.Redirect("~/Account/Login.aspx");
+                    return;
+                }
+
+                LoadSubjects();
+                if (Request.QueryString["subjectId"] != null)
+                {
+                    int sid;
+                    if (int.TryParse(Request.QueryString["subjectId"], out sid))
+                    {
+                        ddlSubjects.SelectedValue = sid.ToString();
+                        LoadNotes(sid);
+                    }
+                }
+            }
+        }
+
+        private void LoadSubjects()
+        {
+            ddlSubjects.Items.Clear();
+            ddlSubjects.Items.Add(new System.Web.UI.WebControls.ListItem("-- Select Subject --","0"));
+            foreach (var s in _subjectBll.GetAll())
+            {
+                if (!s.IsActive) continue;
+                ddlSubjects.Items.Add(new System.Web.UI.WebControls.ListItem(s.SubjectName, s.SubjectID.ToString()));
+            }
+        }
+
+        protected void ddlSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id;
+            if (int.TryParse(ddlSubjects.SelectedValue, out id) && id>0)
+            {
+                LoadNotes(id);
+            }
+            else
+            {
+                ltNotes.Text = string.Empty;
+            }
+        }
+
+        private void LoadNotes(int subjectId)
+        {
+            var notes = _noteBll.GetBySubjectId(subjectId);
+            var sb = new StringBuilder();
+            foreach (var n in notes)
+            {
+                var collapseId = "noteCollapse_" + n.NoteID;
+                // build preview by stripping tags and truncating
+                var plain = Regex.Replace(n.ContentHtml ?? string.Empty, "<.*?>", string.Empty);
+                var preview = plain.Length > 250 ? plain.Substring(0, 250) + "..." : plain;
+
+                sb.Append("<div class=\"card mb-3 shadow-sm\">\n");
+                sb.Append("  <div class=\"card-body\">\n");
+                sb.Append($"    <h5 class=\"card-title\">{Server.HtmlEncode(n.Title)}</h5>\n");
+                sb.Append("    <p class=\"card-text\">" + Server.HtmlEncode(preview) + "</p>\n");
+                sb.Append("    <div class=\"d-flex gap-2\">\n");
+                sb.Append($"      <a class=\"btn btn-sm btn-outline-secondary\" href=\"{ResolveUrl("~/NotePreview.aspx?noteId=" + n.NoteID)}\" target=\"_blank\">Open</a>\n");
+
+                var resources = _resourceBll.GetByNoteId(n.NoteID);
+                if (resources.Count > 0)
+                {
+                    // show first PDF resource as download button, and list others in collapse
+                    var first = resources[0];
+                    var url = ResolveUrl("~/Content/uploads/notes/" + System.IO.Path.GetFileName(first.FilePath));
+                    sb.Append($"      <a class=\"btn btn-sm btn-outline-success\" href=\"{url}\" target=\"_blank\">Download PDF</a>\n");
+                }
+
+                sb.Append("    </div>\n");
+                // show a small preview of content under the buttons
+                sb.Append("    <div class=\"mt-3\">\n");
+                sb.Append(Server.HtmlEncode(preview));
+                sb.Append("    </div>\n");
+                sb.Append("  </div>\n");
+                sb.Append("</div>\n");
+            }
+            ltNotes.Text = sb.ToString();
+        }
+    }
+}

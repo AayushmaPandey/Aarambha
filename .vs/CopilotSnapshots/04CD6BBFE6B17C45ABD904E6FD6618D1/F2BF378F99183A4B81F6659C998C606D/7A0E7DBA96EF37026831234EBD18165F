@@ -1,0 +1,57 @@
+﻿using System;
+using Aarambha.BLL;
+using Aarambha.Models;
+
+namespace Aarambha.Account
+{
+    public partial class Profile : System.Web.UI.Page
+    {
+        private readonly UserBLL _userBll = new UserBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (Session["UserID"] == null)
+                {
+                    Response.Redirect("~/Account/Login.aspx");
+                    return;
+                }
+
+                int userId = Convert.ToInt32(Session["UserID"]);
+                var user = _userBll.GetById(userId);
+                if (user == null)
+                {
+                    Response.Redirect("~/Account/Login.aspx");
+                    return;
+                }
+
+                txtFullName.Text = user.FullName;
+                txtEmail.Text = user.Email;
+                txtPhone.Text = user.PhoneNumber;
+            }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(Session["UserID"]);
+                var user = _userBll.GetById(userId);
+                user.FullName = txtFullName.Text.Trim();
+                user.Email = txtEmail.Text.Trim();
+                user.PhoneNumber = txtPhone.Text.Trim();
+                _userBll.Update(user);
+                ltAlert.Text = "<div class=\"alert alert-success\">Profile saved.</div>";
+            }
+            catch (ValidationException ex)
+            {
+                ltAlert.Text = $"<div class=\"alert alert-danger\">{Server.HtmlEncode(ex.Message)}</div>";
+            }
+            catch (Exception)
+            {
+                ltAlert.Text = "<div class=\"alert alert-danger\">An error occurred while saving profile.</div>";
+            }
+        }
+    }
+}

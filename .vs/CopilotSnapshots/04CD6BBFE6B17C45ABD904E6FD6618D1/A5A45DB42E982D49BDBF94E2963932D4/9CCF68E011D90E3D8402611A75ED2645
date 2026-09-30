@@ -1,0 +1,22 @@
+﻿<%@ Page Title="Quiz Results" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ViewQuizResults.aspx.cs" Inherits="Aarambha.Admin.ViewQuizResults" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Quiz Results</h3>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Filter by Quiz:</label>
+            <asp:DropDownList ID="ddlQuiz" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlQuiz_SelectedIndexChanged"></asp:DropDownList>
+        </div>
+    </div>
+
+    <asp:GridView ID="gvResults" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="StudentName" HeaderText="Student" />
+            <asp:BoundField DataField="QuizTitle" HeaderText="Quiz" />
+            <asp:BoundField DataField="Score" HeaderText="Score" DataFormatString="{0:F2}" />
+            <asp:BoundField DataField="TotalQuestions" HeaderText="Total Questions" />
+            <asp:BoundField DataField="AttemptDate" HeaderText="Attempted" DataFormatString="{0:g}" />
+        </Columns>
+    </asp:GridView>
+</asp:Content>

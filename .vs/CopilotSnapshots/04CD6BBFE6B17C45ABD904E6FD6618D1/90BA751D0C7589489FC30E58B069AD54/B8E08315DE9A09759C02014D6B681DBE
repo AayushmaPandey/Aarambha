@@ -1,0 +1,133 @@
+﻿using System;
+using Aarambha.BLL;
+using Aarambha.Models;
+
+namespace Aarambha.Admin
+{
+    public partial class ManageQuiz : System.Web.UI.Page
+    {
+        private readonly QuizBLL _quizBll = new QuizBLL();
+        private readonly SubjectBLL _subjectBll = new SubjectBLL();
+        private readonly QuestionBLL _questionBll = new QuestionBLL();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CheckRole();
+                LoadSubjects();
+                LoadQuizzes();
+            }
+        }
+
+        private void CheckRole()
+        {
+            if (Session["UserID"] == null || Session["RoleID"] == null || (int)Session["RoleID"] != 1)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
+        }
+
+        private void LoadSubjects()
+        {
+            var subjects = _subjectBll.GetAll();
+            ddlSubject.DataSource = subjects;
+            ddlSubject.DataTextField = "SubjectName";
+            ddlSubject.DataValueField = "SubjectID";
+            ddlSubject.DataBind();
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var quiz = new Quiz
+                {
+                    Title = txtQuizTitle.Text.Trim(),
+                    SubjectID = int.Parse(ddlSubject.SelectedValue),
+                    PassMark = 0,
+                    IsActive = true
+                };
+                _quizBll.Create(quiz);
+                ltAlert.Text = "<div class=\"alert alert-success\">Quiz created.</div>";
+                LoadQuizzes();
+                txtQuizTitle.Text = txtDuration.Text = string.Empty;
+            }
+            catch (ValidationException ex)
+            {
+                ltAlert.Text = $"<div class=\"alert alert-danger\">{Server.HtmlEncode(ex.Message)}</div>";
+            }
+            catch (Exception ex)
+            {
+                ltAlert.Text = $"<div class=\"alert alert-danger\">Error: {Server.HtmlEncode(ex.Message)}</div>";
+            }
+        }
+
+        protected void gvQuizzes_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Manage")
+            {
+                int quizId;
+                if (int.TryParse(e.CommandArgument.ToString(), out quizId))
+                {
+                    ViewState["EditQuizID"] = quizId;
+                    var quiz = _quizBll.GetById(quizId);
+                    ltEditQuiz.Text = Server.HtmlEncode(quiz.Title);
+                    questionPanel.Visible = true;
+                }
+            }
+            else if (e.CommandName == "Delete")
+            {
+                int quizId;
+                if (int.TryParse(e.CommandArgument.ToString(), out quizId))
+                {
+                    try
+                    {
+                        _quizBll.Delete(quizId);
+                        LoadQuizzes();
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        protected void btnAddQuestion_Click(object sender, EventArgs e)
+        {
+            if (ViewState["EditQuizID"] != null)
+            {
+                int quizId = (int)ViewState["EditQuizID"];
+                try
+                {
+                    var question = new Question
+                    {
+                        QuestionText = txtQuestion.Text.Trim(),
+                        QuestionType = "MCQ",
+                        QuizID = quizId,
+                        Marks = 1
+                    };
+                    _questionBll.Create(question);
+                    ltAlert.Text = "<div class=\"alert alert-success\">Question added.</div>";
+                    txtQuestion.Text = string.Empty;
+                }
+                catch (Exception ex)
+                {
+                    ltAlert.Text = $"<div class=\"alert alert-danger\">Error: {Server.HtmlEncode(ex.Message)}</div>";
+                }
+            }
+        }
+
+        protected void btnBackQuizzes_Click(object sender, EventArgs e)
+        {
+            questionPanel.Visible = false;
+            ViewState["EditQuizID"] = null;
+            LoadQuizzes();
+        }
+
+        private void LoadQuizzes()
+        {
+            var quizzes = _quizBll.GetAll();
+            gvQuizzes.DataSource = quizzes;
+            gvQuizzes.DataBind();
+        }
+    }
+}

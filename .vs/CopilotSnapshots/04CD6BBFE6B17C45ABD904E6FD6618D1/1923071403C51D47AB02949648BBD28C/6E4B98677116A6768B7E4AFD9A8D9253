@@ -1,0 +1,34 @@
+﻿<%@ Page Title="Quiz Results" Language="C#" MasterPageFile="~/Masterpages/Site.Master" AutoEventWireup="true" CodeBehind="QuizResults.aspx.cs" Inherits="Aarambha.Member.QuizResults" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>My Quiz Results</h3>
+    <asp:GridView ID="gvResults" runat="server" CssClass="table table-hover align-middle" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="QuizTitle" HeaderText="Quiz" />
+            <asp:TemplateField HeaderText="Score">
+                <ItemTemplate>
+                    <div>
+                        <strong><%# Eval("Score") %></strong> / <%# Eval("TotalMarks") %>
+                    </div>
+                    <div class="progress mt-1" style="height:8px;">
+                        <%#
+                            (function(){
+                                double perc = 0;
+                                try { perc = (Convert.ToDouble(Eval("Score")) / (Convert.ToDouble(Eval("TotalMarks"))==0?1:Convert.ToDouble(Eval("TotalMarks")))) * 100; }
+                                catch { perc = 0; }
+                                var p = Math.Round(perc,0);
+                                return "<div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width:" + p + "%\" aria-valuenow=\"" + p + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>";
+                            })()
+                        %>
+                    </div>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Result">
+                <ItemTemplate>
+                    <%# (bool)Eval("IsPassed") ? "<span class='badge bg-success'>Passed</span>" : "<span class='badge bg-danger'>Failed</span>" %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="AttemptedAt" HeaderText="Attempted At" DataFormatString="{0:g}" />
+        </Columns>
+    </asp:GridView>
+</asp:Content>

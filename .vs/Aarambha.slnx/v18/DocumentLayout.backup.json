@@ -1,0 +1,565 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|c:\\users\\acer\\downloads\\aarambha_newui\\aarambha\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\docs\\techspire_lms_schema.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:docs\\techspire_lms_schema.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\data_access_layer\\quizdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:data_access_layer\\quizdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\managequiz.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\managequiz.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ManageQuiz.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Quiz.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\Quiz.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\QuizResults.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\QuizResults.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\member\\quizresults.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:member\\quizresults.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewQuizResults.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ViewQuizResults.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\data_access_layer\\quizattemptdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:data_access_layer\\quizattemptdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\masterpages\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:masterpages\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\managenotes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\managenotes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\managenotes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\managenotes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\masterpages\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:masterpages\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\viewquizresults.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\viewquizresults.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\pages\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:pages\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\pages\\subjects.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:pages\\subjects.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\account\\profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:account\\profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\pages\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:pages\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Notes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\Notes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\notepreview.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:notepreview.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\managenotes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\managenotes.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\admin\\managequiz.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:admin\\managequiz.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\Dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\Dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Member\\Dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewMessages.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ViewMessages.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageAnnouncements.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ManageAnnouncements.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageSubjects.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ManageSubjects.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ManageStudents.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\ManageStudents.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\BLL\\UserBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:BLL\\UserBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\Dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Admin\\Dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Account\\Login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A1F2E3D4-5B6C-47A8-9C0D-1E2F3A4B5C6D}|Aarambha.csproj|solutionrelative:Account\\Login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-09-25T03:54:33.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Techspire_LMS_Schema.md",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Docs\\Techspire_LMS_Schema.md",
+              "RelativeDocumentMoniker": "Docs\\Techspire_LMS_Schema.md",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Docs\\Techspire_LMS_Schema.md",
+              "RelativeToolTip": "Docs\\Techspire_LMS_Schema.md",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAGEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-09-25T08:18:42.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuizDAL.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Data_Access_Layer\\QuizDAL.cs",
+              "RelativeDocumentMoniker": "Data_Access_Layer\\QuizDAL.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Data_Access_Layer\\QuizDAL.cs",
+              "RelativeToolTip": "Data_Access_Layer\\QuizDAL.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T08:03:03.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuizResults.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\QuizResults.aspx.cs",
+              "RelativeDocumentMoniker": "Member\\QuizResults.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\QuizResults.aspx.cs",
+              "RelativeToolTip": "Member\\QuizResults.aspx.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAWwD4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T07:14:54.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Quiz.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Quiz.aspx.cs",
+              "RelativeDocumentMoniker": "Member\\Quiz.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Quiz.aspx.cs",
+              "RelativeToolTip": "Member\\Quiz.aspx.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T04:30:21.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuizResults.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\QuizResults.aspx",
+              "RelativeDocumentMoniker": "Member\\QuizResults.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\QuizResults.aspx",
+              "RelativeToolTip": "Member\\QuizResults.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:31:38.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManageQuiz.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx",
+              "RelativeDocumentMoniker": "Admin\\ManageQuiz.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx",
+              "RelativeToolTip": "Admin\\ManageQuiz.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:03:47.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ViewQuizResults.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewQuizResults.aspx",
+              "RelativeDocumentMoniker": "Admin\\ViewQuizResults.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewQuizResults.aspx",
+              "RelativeToolTip": "Admin\\ViewQuizResults.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:11:01.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManageQuiz.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\ManageQuiz.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx.cs",
+              "RelativeToolTip": "Admin\\ManageQuiz.aspx.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAawAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T05:07:29.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QuizAttemptDAL.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Data_Access_Layer\\QuizAttemptDAL.cs",
+              "RelativeDocumentMoniker": "Data_Access_Layer\\QuizAttemptDAL.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Data_Access_Layer\\QuizAttemptDAL.cs",
+              "RelativeToolTip": "Data_Access_Layer\\QuizAttemptDAL.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAASwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T07:13:58.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Masterpages\\Site.Master",
+              "RelativeDocumentMoniker": "Masterpages\\Site.Master",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Masterpages\\Site.Master",
+              "RelativeToolTip": "Masterpages\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T06:14:40.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Site.Master.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Masterpages\\Site.Master.cs",
+              "RelativeDocumentMoniker": "Masterpages\\Site.Master.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Masterpages\\Site.Master.cs",
+              "RelativeToolTip": "Masterpages\\Site.Master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T06:55:59.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ManageNotes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\ManageNotes.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx.cs",
+              "RelativeToolTip": "Admin\\ManageNotes.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T05:09:10.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ManageNotes.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx",
+              "RelativeDocumentMoniker": "Admin\\ManageNotes.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx",
+              "RelativeToolTip": "Admin\\ManageNotes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:01:52.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ViewQuizResults.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewQuizResults.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\ViewQuizResults.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewQuizResults.aspx.cs",
+              "RelativeToolTip": "Admin\\ViewQuizResults.aspx.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T05:51:50.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\Default.aspx",
+              "RelativeDocumentMoniker": "Pages\\Default.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\Default.aspx",
+              "RelativeToolTip": "Pages\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T06:14:54.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Subjects.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\Subjects.aspx",
+              "RelativeDocumentMoniker": "Pages\\Subjects.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\Subjects.aspx",
+              "RelativeToolTip": "Pages\\Subjects.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T06:15:03.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Profile.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Account\\Profile.aspx.cs",
+              "RelativeDocumentMoniker": "Account\\Profile.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Account\\Profile.aspx.cs",
+              "RelativeToolTip": "Account\\Profile.aspx.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T06:30:42.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "About.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\About.aspx",
+              "RelativeDocumentMoniker": "Pages\\About.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Pages\\About.aspx",
+              "RelativeToolTip": "Pages\\About.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T06:14:27.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NotePreview.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\NotePreview.aspx",
+              "RelativeDocumentMoniker": "NotePreview.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\NotePreview.aspx",
+              "RelativeToolTip": "NotePreview.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T05:26:29.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Notes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Notes.aspx.cs",
+              "RelativeDocumentMoniker": "Member\\Notes.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Notes.aspx.cs",
+              "RelativeToolTip": "Member\\Notes.aspx.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAawAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T04:29:14.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ManageNotes.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx.designer.cs",
+              "RelativeDocumentMoniker": "Admin\\ManageNotes.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageNotes.aspx.designer.cs",
+              "RelativeToolTip": "Admin\\ManageNotes.aspx.designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T05:12:43.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ManageQuiz.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx.designer.cs",
+              "RelativeDocumentMoniker": "Admin\\ManageQuiz.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageQuiz.aspx.designer.cs",
+              "RelativeToolTip": "Admin\\ManageQuiz.aspx.designer.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAawAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T05:07:17.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx",
+              "RelativeDocumentMoniker": "Member\\Dashboard.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx",
+              "RelativeToolTip": "Member\\Dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:27:20.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Dashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Member\\Dashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.cs",
+              "RelativeToolTip": "Member\\Dashboard.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T04:27:31.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Dashboard.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.designer.cs",
+              "RelativeDocumentMoniker": "Member\\Dashboard.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Member\\Dashboard.aspx.designer.cs",
+              "RelativeToolTip": "Member\\Dashboard.aspx.designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T04:27:59.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ViewMessages.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewMessages.aspx",
+              "RelativeDocumentMoniker": "Admin\\ViewMessages.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ViewMessages.aspx",
+              "RelativeToolTip": "Admin\\ViewMessages.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:06:37.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ManageAnnouncements.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageAnnouncements.aspx",
+              "RelativeDocumentMoniker": "Admin\\ManageAnnouncements.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageAnnouncements.aspx",
+              "RelativeToolTip": "Admin\\ManageAnnouncements.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:05:18.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ManageSubjects.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageSubjects.aspx",
+              "RelativeDocumentMoniker": "Admin\\ManageSubjects.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageSubjects.aspx",
+              "RelativeToolTip": "Admin\\ManageSubjects.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T04:00:24.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ManageStudents.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\ManageStudents.aspx.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx.cs",
+              "RelativeToolTip": "Admin\\ManageStudents.aspx.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAawAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T03:59:10.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ManageStudents.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx",
+              "RelativeDocumentMoniker": "Admin\\ManageStudents.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\ManageStudents.aspx",
+              "RelativeToolTip": "Admin\\ManageStudents.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T03:58:50.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserBLL.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\BLL\\UserBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\UserBLL.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\BLL\\UserBLL.cs",
+              "RelativeToolTip": "BLL\\UserBLL.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T03:58:27.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\Dashboard.aspx",
+              "RelativeDocumentMoniker": "Admin\\Dashboard.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Admin\\Dashboard.aspx",
+              "RelativeToolTip": "Admin\\Dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T03:57:34.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Account\\Login.aspx",
+              "RelativeDocumentMoniker": "Account\\Login.aspx",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\Aarambha_NewUI\\Aarambha\\Account\\Login.aspx",
+              "RelativeToolTip": "Account\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-25T03:55:08.154Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

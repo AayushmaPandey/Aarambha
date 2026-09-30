@@ -1,0 +1,42 @@
+﻿<%@ Page Title="Quiz Results" Language="C#" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="true" CodeBehind="ViewQuizResults.aspx.cs" Inherits="Aarambha.Admin.ViewQuizResults" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Quiz Results</h3>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Filter by Quiz:</label>
+            <asp:DropDownList ID="ddlQuiz" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlQuiz_SelectedIndexChanged"></asp:DropDownList>
+        </div>
+    </div>
+    <asp:GridView ID="gvResults" runat="server" CssClass="table table-hover" AutoGenerateColumns="false">
+        <Columns>
+            <asp:TemplateField HeaderText="Student">
+                <ItemTemplate>
+                    <%# (new Aarambha.BLL.UserBLL()).GetById(Convert.ToInt32(Eval("UserID"))).FullName %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Quiz">
+                <ItemTemplate>
+                    <%# (new Aarambha.BLL.QuizBLL()).GetById(Convert.ToInt32(Eval("QuizID"))).Title %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Score">
+                <ItemTemplate>
+                    <%# Eval("Score") %> / <%# Eval("TotalMarks") %>
+                    <div class="small text-muted">(<%# Math.Round(Convert.ToDouble(Eval("Score")) / (Convert.ToDouble(Eval("TotalMarks")) == 0 ? 1 : Convert.ToDouble(Eval("TotalMarks"))) * 100, 2) %>%)</div>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Result">
+                <ItemTemplate>
+                    <%# (bool)Eval("IsPassed") ? "<span class=\"badge bg-success\">Pass</span>" : "<span class=\"badge bg-danger\">Fail</span>" %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Attempted">
+                <ItemTemplate>
+                    <%# Eval("AttemptedAt", "{0:g}") %>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+</asp:Content>

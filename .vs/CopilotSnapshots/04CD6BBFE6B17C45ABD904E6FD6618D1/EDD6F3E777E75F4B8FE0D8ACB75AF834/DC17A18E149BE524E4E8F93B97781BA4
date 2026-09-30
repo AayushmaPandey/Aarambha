@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Aarambha.Masterpages.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">Aarambha</asp:ContentPlaceHolder> | Aarambha</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white site-nav sticky-top">
+            <div class="container">
+                <a class="navbar-brand" runat="server" href="~/Pages/Default.aspx">
+                    <span class="brand-badge">A</span>
+                    <span>AARAMBHA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <asp:PlaceHolder ID="phPublicNav" runat="server">
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Pages/Default.aspx">Home</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Pages/About.aspx">About</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Pages/Subjects.aspx">Subjects</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Pages/Contact.aspx">Contact</asp:HyperLink>
+                            </li>
+                        </asp:PlaceHolder>
+
+                        <asp:PlaceHolder ID="phGuestLinks" runat="server">
+                            <li class="nav-item ms-lg-2">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Account/Login.aspx">Login</asp:HyperLink>
+                            </li>
+                            <!-- Sign Up removed: accounts are created by teachers only -->
+                        </asp:PlaceHolder>
+
+                        <asp:PlaceHolder ID="phMemberLinks" runat="server" Visible="false">
+                            <li class="nav-item">
+                                <asp:HyperLink ID="hlDashboard" runat="server" CssClass="nav-link">Dashboard</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Pages/Subjects.aspx">Subjects</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Member/Quiz.aspx">Quiz</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Member/QuizResults.aspx">Results</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" CssClass="nav-link" NavigateUrl="~/Member/Announcements.aspx">Announcements</asp:HyperLink>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <asp:Literal ID="litUserName" runat="server" />
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Account/Profile.aspx">Profile</asp:HyperLink></li>
+                                    <li><asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Account/ChangePassword.aspx">Change Password</asp:HyperLink></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><asp:HyperLink runat="server" CssClass="dropdown-item text-danger" NavigateUrl="~/Account/Logout.aspx">Logout</asp:HyperLink></li>
+                                </ul>
+                            </li>
+                        </asp:PlaceHolder>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <h6 class="fs-5">AARAMBHA</h6>
+                        <p class="small mb-0">A focused Grade 8 learning portal for Sanskar School: notes, quizzes, results and announcements in one place.</p>
+                    </div>
+                    <div class="col-6 col-md-3 offset-md-1">
+                        <h6>Explore</h6>
+                        <ul class="list-unstyled small mb-0">
+                            <li><a href="<%= ResolveUrl("~/Pages/Default.aspx") %>">Home</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Subjects.aspx") %>">Subjects</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/About.aspx") %>">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h6>Account</h6>
+                        <ul class="list-unstyled small mb-0">
+                            <li><a href="<%= ResolveUrl("~/Account/Login.aspx") %>">Login</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Contact.aspx") %>">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="border-secondary my-4" />
+                <div class="small text-center">&copy; 2026 Aarambha &middot; Sanskar School. All rights reserved.</div>
+            </div>
+        </footer>
+    </form>
+
+    <script src="<%= ResolveUrl("~/Scripts/jquery-3.7.0.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+    <script>document.querySelectorAll('.nav-link[href]').forEach(function(a){if(a.pathname.toLowerCase()===location.pathname.toLowerCase())a.classList.add('active')});</script>
+
+</body>
+</html>
